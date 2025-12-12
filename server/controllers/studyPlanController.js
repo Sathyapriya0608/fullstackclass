@@ -1,4 +1,4 @@
-import studyPlan from '../models/StudyPlan.js';
+import studyPlan from '../models/studyPlan.js';
 
 
 export const createStudyPlan = async (req, res) => {
