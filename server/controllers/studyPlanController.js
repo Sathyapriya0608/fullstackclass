@@ -29,7 +29,7 @@ export const createStudyPlan = async (req, res) => {
 }
 export const getStudyPlans = async (req, res) => {
     try{
-        const plan = await studyPlan.find().sort({createdAt: -1});
+        const plan = await StudyPlan.find().sort({createdAt: -1});
         return res.status(200).json({message: "plan retrived successfully", plan});
     } catch {
         return res.status(500).json({ message: 'Error creating study plan', error: error.message });
@@ -40,14 +40,14 @@ export const editStudyPlan = async (req, res) => {
     const { planName, startDate, endDate, description, specialConstraints, aiSuggestion } = req.body;
 
 
-    const ifexist = await studyPlan.findById(id);
+    const ifexist = await StudyPlan.findById(id);
     if(!ifexist){
         return res.status(404).json({ message: 'Study plan not found' });
     }
 
 
     try{
-        const updatedPlan = await studyPlan.findByIdAndUpdate(id, {
+        const updatedPlan = await StudyPlan.findByIdAndUpdate(id, {
             planName,
             startDate,
             endDate,
@@ -67,14 +67,14 @@ export const deleteStudyPlan = async (req, res) => {
     const { id } = req.params;
 
 
-    const ifexist = await studyPlan.findById(id);
+    const ifexist = await StudyPlan.findById(id);
     if(!ifexist){
         return res.status(404).json({ message: 'Study plan not found' });
     }
 
 
     try{
-        const deletedPlan = await studyPlan.findByIdAndDelete(id);
+        const deletedPlan = await StudyPlan.findByIdAndDelete(id);
         return res.status(200).json({message: "plan deleted successfully", deletedPlan});
     } catch (error) {
         return res.status(500).json({ message: 'Error deleting study plan', error: error.message });
