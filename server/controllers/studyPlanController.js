@@ -1,4 +1,4 @@
-import StudyPlan from '../models/StudyPlan.js';
+import StudyPlan from "../models/StudyPlan.js"
 
 
 export const createStudyPlan = async (req, res) => {
@@ -11,7 +11,7 @@ export const createStudyPlan = async (req, res) => {
 
 
     try {
-        const newStudyPlan = new studyPlan({
+        const newStudyPlan = new StudyPlan({
             planName,
             startDate,
             endDate,
