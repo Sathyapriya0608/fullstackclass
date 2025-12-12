@@ -5,10 +5,10 @@ import { createStudyPlan, getStudyPlans ,editStudyPlan,deleteStudyPlan} from '..
 const router = express.Router();
 
 
-router.post('/studyplan', createStudyPlan);
-router.get('/studyplan', getStudyPlans);
-router.put('/studyplan/:id', editStudyPlan);
-router.delete('/studyplan/:id', deleteStudyPlan);
+router.post('/Studyplan', createStudyPlan);
+router.get('/Studyplan', getStudyPlans);
+router.put('/Studyplan/:id', editStudyPlan);
+router.delete('/Studyplan/:id', deleteStudyPlan);
 
 
 
