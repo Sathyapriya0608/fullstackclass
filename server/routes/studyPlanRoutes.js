@@ -1,15 +1,12 @@
 import express from 'express';
-import { createStudyPlan, getStudyPlans ,editStudyPlan,deleteStudyPlan} from '../controllers/studyPlanController.js'
-
+import { createStudyPlan, getStudyPlans, editStudyPlan, deleteStudyPlan } from '../controllers/studyPlanController.js'
 
 const router = express.Router();
 
+router.post('/studyplan', createStudyPlan);
+router.get('/studyplan', getStudyPlans);
+router.put('/studyplan/:id', editStudyPlan);
 
-router.post('/Studyplan', createStudyPlan);
-router.get('/Studyplan', getStudyPlans);
-router.put('/Studyplan/:id', editStudyPlan);
-router.delete('/Studyplan/:id', deleteStudyPlan);
-
-
+router.delete('/studyplan/:id', deleteStudyPlan);
 
 export default router;
